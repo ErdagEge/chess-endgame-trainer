@@ -50,7 +50,7 @@ chess-endgame-trainer/
 
 ```sh
 # Clone repository
-git clone https://github.com/yourusername/chess-endgame-trainer.git
+git clone https://github.com/ErdagEge/chess-endgame-trainer.git
 
 # Frontend setup
 cd frontend

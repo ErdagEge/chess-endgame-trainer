@@ -14,63 +14,13 @@ The Chess Endgame Simulator & Trainer provides chess enthusiasts and learners wi
 * **Progress Tracking**: Basic analytics and progress monitoring.
 * **Responsive Design**: Mobile-friendly interface ensuring accessibility on all devices.
 
-## Tech Stack
-
-### Frontend
-
-* React (TypeScript)
-* Chessboard.js
-* Tailwind CSS
-
-### Backend
-
-* Node.js
-* Express
-* Stockfish Integration
-* MongoDB / PostgreSQL (optional)
-
-## Project Structure
-
-```
-chess-endgame-trainer/
-├── frontend/       # React frontend
-├── backend/        # Node.js & Express backend
-├── docs/           # Project documentation
-└── README.md
-```
-
 ## Getting Started
-
-### Prerequisites
-
-* Node.js & npm
-* Stockfish chess engine
 
 ### Installation
 
 ```sh
 # Clone repository
 git clone https://github.com/ErdagEge/chess-endgame-trainer.git
-
-# Frontend setup
-cd frontend
-npm install
-
-# Backend setup
-cd ../backend
-npm install
-```
-
-### Running Locally
-
-```sh
-# Start Backend
-cd backend
-npm run start
-
-# Start Frontend
-cd ../frontend
-npm run dev
 ```
 
 ## Contributing

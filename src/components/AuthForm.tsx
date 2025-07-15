@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { login, register } from '../firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
 const AuthForm: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isRegistering, setIsRegistering] = useState(false);
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -14,8 +16,10 @@ const AuthForm: React.FC = () => {
     try {
       if (isRegistering) {
         await register(email, password);
+        navigate('/trainer');
       } else {
         await login(email, password);
+        navigate('/trainer');
       }
       // You can redirect to the dashboard here if needed
     } catch (err: any) {

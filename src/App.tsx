@@ -1,11 +1,16 @@
-import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import AuthForm from './components/AuthForm';
+import Trainer from './pages/Trainer';
 
 function App() {
   return (
-    <div style={{ padding: 32 }}>
-      <AuthForm />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<AuthForm />} />
+        <Route path="/trainer" element={<Trainer />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </Router>
   );
 }
 

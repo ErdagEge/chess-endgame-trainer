@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Chessboard } from 'react-chessboard';
+import { Chessboard, ChessboardOptions } from 'react-chessboard';
 import { Chess } from 'chess.js';
 
 export default function Trainer() {
@@ -24,21 +24,22 @@ export default function Trainer() {
     return result;
   }
 
-  const SafeChessboard = Chessboard as any;
+  function handleDrop({ sourceSquare, targetSquare }: { sourceSquare: string; targetSquare: string | null }) {
+    const moveMade = makeMove({ from: sourceSquare, to: targetSquare || '', promotion: 'q' });
+    return moveMade !== null;
+  }
+
+  const boardOptions: ChessboardOptions = {
+    position: fen,
+    onPieceDrop: handleDrop,
+    boardOrientation: 'white',
+    boardWidth: 400,
+  };
 
   return (
     <div style={{ padding: 32 }}>
       <h2>Endgame Trainer</h2>
-      {game && (
-        <SafeChessboard
-          position={fen}
-          onPieceDrop={({ sourceSquare, targetSquare }: { sourceSquare: string; targetSquare: string }) => {
-            const moveMade = makeMove({ from: sourceSquare, to: targetSquare, promotion: 'q' });
-            return moveMade !== null;
-          }}
-          boardWidth={400}
-        />
-      )}
+      {game && <Chessboard options={boardOptions} />}
     </div>
   );
 }

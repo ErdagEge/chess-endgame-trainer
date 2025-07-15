@@ -8,6 +8,7 @@ jest.mock('./firebase/auth', () => ({
   register: jest.fn(),
   logout: jest.fn(),
 }));
+jest.mock('stockfish');
 
 import App from './App';
 

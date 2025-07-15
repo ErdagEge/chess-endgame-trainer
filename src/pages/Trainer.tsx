@@ -33,7 +33,7 @@ export default function Trainer() {
     position: fen,
     onPieceDrop: handleDrop,
     boardOrientation: 'white',
-    boardWidth: 400,
+    //boardWidth: 400,
   };
 
   return (
